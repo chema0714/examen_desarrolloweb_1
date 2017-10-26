@@ -1,0 +1,3 @@
+*.pyc
+#ignorar los directorios siguientes
+venv/

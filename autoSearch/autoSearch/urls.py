@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from carros.views import home
+from carros.views import home, Car_list, Car_detail
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', home, name='home')
+    url(r'^$', home, name='home'),
+    url(r'^list/', Car_list.as_view() , name='lista'),
+    url(r'^detail/(?P<pk>\d+)/', Car_detail.as_view() , name='detalle'),
+
 ]

@@ -14,3 +14,5 @@ class Car(models.Model):
     colour = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=99999,decimal_places=2)
     created = models.CharField(max_length=100,default=time.strftime("%H:%M"))
+
+

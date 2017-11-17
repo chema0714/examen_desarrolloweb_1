@@ -45,10 +45,7 @@
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        {%include "carros/search_form.html" %}
       </div>
     </nav>
 
@@ -63,6 +60,8 @@
           <div class="jumbotron">
             <h1>Lista de carros</h1>
           </div>
+          {% block content %}
+          {% endblock content %}          
           {%if object_list%}
           <table class="table">
             <thead>
@@ -87,7 +86,7 @@
             {%endfor%}
           </table>
           {%else%}
-          <h3>No hay datos</h3>
+          <h3></h3>
           {%endif%}
 
           </div><!--/span-->

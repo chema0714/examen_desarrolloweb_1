@@ -16,12 +16,14 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from carros.views import home, Car_list, Car_detail
+from carros.views import home, Car_list, Car_detail, CarCreateView, CarUpdateView, CarDeleteView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
     url(r'^list/', Car_list.as_view() , name='lista'),
     url(r'^detail/(?P<pk>\d+)/', Car_detail.as_view() , name='detalle'),
-
+    url(r'^create/',CarCreateView.as_view(),name="Crear"),
+    url(r'^update/(?P<pk>\d+)/',CarUpdateView.as_view(), name="Actualizar"),
+    url(r'^delete/(?P<pk>\d+)/',CarDeleteView.as_view(),name="BorrarElemento"),
 ]
